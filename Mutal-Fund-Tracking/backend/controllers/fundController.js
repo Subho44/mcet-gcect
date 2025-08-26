@@ -3,7 +3,10 @@ const Fund = require('../models/Fund');
 //add fund
 exports.addfund = async(req,res)=>{
     try {
-        const newfund = await Fund.create(req.body);
+        const {fundname,fundtype,amountinvested,returns} = req.body;
+          const photo = req.file ? req.file.filename : null;
+        const newfund = new Fund({fundname,fundtype,amountinvested,returns,photo});
+        await newfund.save();
         res.status(201).json(newfund);
     }catch(err) {
          res.status(400).json({error:err.message});

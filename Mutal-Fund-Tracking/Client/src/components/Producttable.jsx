@@ -13,6 +13,7 @@ const Producttable = ({funds}) => {
                     <th>Fund Type</th>
                     <th>Amount Invested</th>
                     <th>Returns</th>
+                    <th>Photo</th>
                     <th>Date</th>
                 </tr>
 
@@ -22,6 +23,7 @@ const Producttable = ({funds}) => {
                         <td>{x.fundtype}</td>
                         <td>{x.amountinvested}</td>
                         <td>{x.returns}</td>
+                        <td>{x.photo && <img src={`http://localhost:5800/uploads/${x.photo}`} alt="img" width={50} height={50}/>}</td>
                         <td>{new Date(x.date).toLocaleDateString()}</td>
                     </tr>
                 ))}

@@ -5,6 +5,7 @@ const fundschema = new mongoose.Schema({
     fundtype:{type:String,required:true},
     amountinvested:{type:Number,required:true},
     returns:{type:Number,default:0},
+    photo:{type:String},
     date:{type:Date, default:Date.now}
 
 });
