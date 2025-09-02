@@ -1,5 +1,6 @@
 import { Table,Card } from "react-bootstrap";
-const Producttable = ({funds}) => {
+import Paymentbutton from "./Paymentbutton";
+const Producttable = ({funds,refreshFunds}) => {
 
 
 
@@ -14,6 +15,7 @@ const Producttable = ({funds}) => {
                     <th>Amount Invested</th>
                     <th>Returns</th>
                     <th>Photo</th>
+                    <th>Invest</th>
                     <th>Date</th>
                 </tr>
 
@@ -24,6 +26,7 @@ const Producttable = ({funds}) => {
                         <td>{x.amountinvested}</td>
                         <td>{x.returns}</td>
                         <td>{x.photo && <img src={`http://localhost:5800/uploads/${x.photo}`} alt="img" width={50} height={50}/>}</td>
+                        <td><Paymentbutton fundId={x._id} amount={1000} refreshFunds={refreshFunds}/></td>
                         <td>{new Date(x.date).toLocaleDateString()}</td>
                     </tr>
                 ))}
