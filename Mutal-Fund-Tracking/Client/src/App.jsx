@@ -9,6 +9,8 @@ import Footer from './components/Footer'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import PrivateRoute from './utils/PrivateRoute'
+import Requestotp from './pages/Requestotp'
+import Verifyotp from './pages/Verifyotp'
 
 const App = () => {
 
@@ -19,6 +21,9 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
+         <Route path='/request-otp' element={<Requestotp />}></Route>
+          <Route path='/verify-otp' element={<Verifyotp />}></Route>
+
         <Route element={<PrivateRoute />}>
           <Route path='/home' element={<Home />}></Route>
           <Route path='/about' element={<About />}></Route>

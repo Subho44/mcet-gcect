@@ -16,6 +16,8 @@ const Header = () => {
             <ul>
                 <li><Link to="/">Register</Link></li>
                 <li><Link to="/login">Login</Link></li>
+                <li><Link to="/request-otp">Request otp</Link></li>
+                <li><Link to="/verify-otp">Verify otp</Link></li>
 
                 {
                     token && (
