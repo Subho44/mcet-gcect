@@ -1,8 +1,8 @@
-
+// src/controllers/orderController.js
 const Cart = require("../models/Cart");
 const Order = require("../models/Order");
 
-// POST 
+// POST /api/orders
 const placeOrder = async (req, res) => {
   try {
     const userId = req.userId;
@@ -35,7 +35,6 @@ const placeOrder = async (req, res) => {
 
     await order.save();
 
-    // Clear cart
     cart.items = [];
     await cart.save();
 
@@ -46,7 +45,7 @@ const placeOrder = async (req, res) => {
   }
 };
 
-// GET 
+// GET /api/orders
 const getOrders = async (req, res) => {
   try {
     const userId = req.userId;

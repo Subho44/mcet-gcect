@@ -1,6 +1,10 @@
+// src/middleware/demoUser.js
 
-const demoUser = (req,res,next) => {
-    req.userId = "demo-user";
-    next();
+// Simple middleware to simulate logged-in user
+const demoUser = (req, res, next) => {
+  // later replace with real JWT
+  req.userId = "demo-user";
+  next();
 };
+
 module.exports = demoUser;

@@ -1,12 +1,12 @@
+// src/routes/productRoutes.js
 const express = require("express");
 const router = express.Router();
+const { seedProducts, getProducts } = require("../controllers/productController");
 
-const {
-    seedProducts,
-    getproducts
-} = require ('../controllers/productController');
+// POST /api/products/seed
+router.post("/seed", seedProducts);
 
-router.post('/seed',seedProducts);
-router.get("/",getproducts);
+// GET /api/products
+router.get("/", getProducts);
 
 module.exports = router;
